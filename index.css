@@ -36,7 +36,7 @@
         }
 
         h1 {
-            font-size: 4.2rem;
+            font-size: 3 rem;
             margin-bottom: 18px;
             text-shadow: 0 0 20px #ff8c00;
             animation: textGlow 2.5s infinite alternate;
@@ -103,8 +103,18 @@
         ──────────────────────────────────────────────── */
         @media (max-width: 768px) {
             body {
-                padding: 12px;
-            }
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ff6b00, #ff8c00, #c300ff, #ff00aa);
+            background-size: 400% 400%;
+            animation: neonFlow 12s ease infinite;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
             .container {
                 padding: 35px 20px;
                 border-radius: 16px;
