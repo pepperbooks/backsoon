@@ -10,140 +10,52 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 20px;
         }
-
         @keyframes neonFlow {
             0%,100% { background-position: 0% 50%; }
             50%     { background-position: 100% 50%; }
         }
-
         .container {
             background: rgba(0,0,0,0.45);
             backdrop-filter: blur(12px);
-            padding: 45px 25px;
-            border-radius: 20px;
+            padding: 50px 30px;
+            border-radius: 24px;
             text-align: center;
-            max-width: 780px;
-            width: 100%;
+            max-width: 800px;
             box-shadow: 0 0 60px rgba(255,107,0,0.6);
             animation: pulseGlow 4s infinite alternate;
         }
-
         @keyframes pulseGlow {
             from { box-shadow: 0 0 40px rgba(255,107,0,0.4); }
             to   { box-shadow: 0 0 80px rgba(195,0,255,0.7); }
         }
-
-        h1 {
-            font-size: 4.2rem;
-            margin-bottom: 18px;
+        h1 { 
+            font-size: 4.5rem; 
+            margin-bottom: 20px; 
             text-shadow: 0 0 20px #ff8c00;
             animation: textGlow 2.5s infinite alternate;
-            line-height: 1.1;
         }
-
         @keyframes textGlow {
             from { text-shadow: 0 0 10px #ff8c00; }
             to   { text-shadow: 0 0 30px #c300ff, 0 0 50px #ff00aa; }
         }
-
-        p, .follow-prompt {
-            font-size: 1.35rem;
-            line-height: 1.55;
-            margin: 14px 0;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin: 35px 0;
-        }
-
+        p, .follow-prompt { font-size: 1.4rem; line-height: 1.6; margin: 15px 0; }
+        .social-icons { display: flex; justify-content: center; gap: 35px; margin: 40px 0; }
         .social-icons img {
-            width: 78px;
-            height: 78px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             transition: all 0.4s;
             box-shadow: 0 0 15px rgba(255,255,255,0.5);
         }
-
-        .social-icons a:hover img {
-            transform: scale(1.2) rotate(8deg);
+        .social-icons a:hover img { 
+            transform: scale(1.25) rotate(10deg); 
             box-shadow: 0 0 35px #ff00aa;
         }
-
-        section {
-            margin: 25px 0;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        a {
-            color: #ffccff;
-            text-decoration: underline;
-        }
-
-        /* ────────────────────────────────────────────────
-           MOBILE FRIENDLY CSS – stronger rules
-        ──────────────────────────────────────────────── */
-        @media (max-width: 768px) {
-            body {
-                padding: 12px;
-            }
-            .container {
-                padding: 35px 20px;
-                border-radius: 16px;
-                max-width: 100%;
-            }
-            h1 {
-                font-size: 2.8rem;
-                margin-bottom: 15px;
-            }
-            p, .follow-prompt {
-                font-size: 1.15rem;
-                line-height: 1.5;
-            }
-            .social-icons {
-                gap: 20px;
-                margin: 30px 0;
-            }
-            .social-icons img {
-                width: 62px;
-                height: 62px;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.4rem;
-            }
-            p, .follow-prompt {
-                font-size: 1.05rem;
-            }
-            .social-icons img {
-                width: 56px;
-                height: 56px;
-            }
-            .container {
-                padding: 30px 18px;
-            }
+        @media (max-width: 600px) {
+            h1 { font-size: 3.2rem; }
+            .container { padding: 40px 25px; }
+            .social-icons img { width: 70px; height: 70px; }
         }
     </style>
