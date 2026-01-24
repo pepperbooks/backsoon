@@ -3,178 +3,83 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Pepper Books – Roaring Back Soon! 🐯</title>
+    <title>Pepper Books – Roaring Back Soon!</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
+            margin: 0;
             min-height: 100vh;
-            background: linear-gradient(-45deg, #ff9a00, #ffcc00, #ff9a00, #ffcc00);
+            background: linear-gradient(-45deg, #ff6b00, #ff8c00, #c300ff, #ff00aa);
             background-size: 400% 400%;
-            animation: gradientFlow 15s ease infinite;
-            color: #333;
+            animation: neonFlow 12s ease infinite;
+            color: white;
+            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            overflow-x: hidden;
         }
-
-        @keyframes gradientFlow {
-            0%   { background-position: 0% 50%; }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes neonFlow {
+            0%,100% { background-position: 0% 50%; }
+            50%     { background-position: 100% 50%; }
         }
-
         .container {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(12px);
             padding: 50px 30px;
             border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
             text-align: center;
-            max-width: 820px;
-            width: 100%;
-            animation: fadeInUp 1.2s ease-out;
+            max-width: 800px;
+            box-shadow: 0 0 60px rgba(255,107,0,0.6);
+            animation: pulseGlow 4s infinite alternate;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 40px rgba(255,107,0,0.4); }
+            to   { box-shadow: 0 0 80px rgba(195,0,255,0.7); }
         }
-
-        h1 {
-            font-size: 4.2rem;
-            color: #d35400;
-            font-weight: 900;
-            margin-bottom: 12px;
-            text-shadow: 3px 3px 0 #ffe066;
-            animation: roarPulse 3s infinite alternate ease-in-out;
+        h1 { 
+            font-size: 4.5rem; 
+            margin-bottom: 20px; 
+            text-shadow: 0 0 20px #ff8c00;
+            animation: textGlow 2.5s infinite alternate;
         }
-
-        @keyframes roarPulse {
-            0%   { transform: scale(1) rotate(-1deg); }
-            100% { transform: scale(1.04) rotate(1deg); }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #ff8c00; }
+            to   { text-shadow: 0 0 30px #c300ff, 0 0 50px #ff00aa; }
         }
-
-        .catchy-sub {
-            font-size: 2.1rem;
-            color: #e67e22;
-            margin: 0 0 30px;
-            font-weight: bold;
-            animation: fadeIn 2s ease-out 0.6s both;
-        }
-
-        p {
-            font-size: 1.35rem;
-            line-height: 1.6;
-            margin: 16px 0;
-            color: #444;
-            animation: fadeIn 1.8s ease-out 0.9s both;
-        }
-
-        .follow-prompt {
-            font-size: 1.6rem;
-            color: #555;
-            margin: 40px 0 30px;
-            font-style: italic;
-            animation: fadeIn 2s ease-out 1.2s both;
-        }
-
-        .email {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e67e22;
-            margin: 35px 0;
-            animation: fadeIn 2s ease-out 1.5s both;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            transition: all 0.4s ease;
-        }
-
+        p, .follow-prompt { font-size: 1.4rem; line-height: 1.6; margin: 15px 0; }
+        .social-icons { display: flex; justify-content: center; gap: 35px; margin: 40px 0; }
         .social-icons img {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            transition: all 0.35s ease;
+            transition: all 0.4s;
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
         }
-
-        .social-icons a:hover img {
-            transform: translateY(-12px) scale(1.18);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        .social-icons a:hover img { 
+            transform: scale(1.25) rotate(10deg); 
+            box-shadow: 0 0 35px #ff00aa;
         }
-
-        /* Entrance animations delay */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobile adjustments */
         @media (max-width: 600px) {
-            h1          { font-size: 3.2rem; }
-            .catchy-sub { font-size: 1.8rem; }
-            p           { font-size: 1.2rem; }
-            .follow-prompt { font-size: 1.4rem; }
-            .email      { font-size: 1.35rem; }
-            .social-icons img { width: 68px; height: 68px; }
-            .container  { padding: 40px 25px; }
+            h1 { font-size: 3.2rem; }
+            .container { padding: 40px 25px; }
+            .social-icons img { width: 70px; height: 70px; }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>Pepper Books is Roaring Back! 🔥🐯</h1>
-        <div class="catchy-sub">While We're Upgrading...</div>
-
-        <p>Soon you'll discover even more books, smoother search, and seamless cart magic.</p>
-        <p>We're coming back fiercer, faster, and fuller of stories!</p>
-        <p>Stay tuned for the big reveal!</p>
-
-        <div class="follow-prompt">
-            Check our social media handles for more updates, sneak peeks & bookish roars!
-        </div>
-
-        <!-- Social Media Icons – replace hrefs with your real links -->
+        <h1>Pepper Books is Roaring Back! 🔥</h1>
+        <p>While we're upgrading, follow us for exclusive sneak peeks!</p>
+        <div class="follow-prompt">More books, better search, epic cart experience — coming soon!</div>
+        
         <div class="social-icons">
-            <a href="https://www.facebook.com/pepperbooks" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
-            </a>
-            <a href="https://twitter.com/pepperbooks" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter/X">
-            </a>
-            <a href="https://www.instagram.com/pepper_books" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
-            </a>
-            <a href="https://www.youtube.com/@pepperbooks" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube">
-            </a>
+            <a href="https://www.facebook.com/pepperbooks"><img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"></a>
+            <a href="https://twitter.com/pepperbooks"><img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/pepper_books"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/@pepperbooks"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"></a>
         </div>
-
-        <div class="email">Contact us anytime: pepperbook@yahoo.com</div>
+        
+        <p>Contact: pepperbook@yahoo.com</p>
     </div>
-
 </body>
 </html>
